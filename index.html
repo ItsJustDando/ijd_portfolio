@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItsJustDando</title>
+    <link rel="icon" href="assets/favicon.svg" sizes="32x32">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cascadia Code', 'Courier New', monospace;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .landing-page {
+            position: relative;
+            align-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .background-image {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+            max-width: none;
+        }
+
+        .background-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-info {
+            position: fixed;
+            left: calc(50% + 1px);
+            transform: translateX(-50%);
+            bottom: 10px;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            margin: auto;
+            max-width: 1000px;
+            width: 75%;
+            height: 75%;
+            padding: 32px 80px;
+            outline: 1.75px solid rgba(255, 255, 255, 0.125);
+            border-radius: 16px;
+            background-color: black;
+            box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.35);
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+
+        .top-section {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            align-items: center;
+            width: 100%;
+            max-height: 100%;
+        }
+
+        .stuff-section {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-section {
+            scroll-behavior: smooth;
+            display: grid;
+            grid-template-columns: auto;
+            column-gap: 24px;
+            row-gap: 24px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .image-section {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            height: auto;
+        }
+
+        .info-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.42px;
+            white-space: pre;
+        }
+
+        .info-body {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.42px;
+        }
+
+        /* email icon */
+        .email-icon {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            transition: transform 0.2s ease;
+        }
+
+        .email-icon:hover {
+            transform: scale(1.15);
+            transition: transform 0.2s ease;
+            opacity: 1;
+        }
+
+        /* numero icon */
+        .numero-icon {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            transition: transform 0.2s ease;
+        }
+
+        .numero-icon:hover {
+            transform: scale(1.15);
+            transition: transform 0.2s ease;
+            opacity: 1;
+        }
+
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LW1Y00RQWH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LW1Y00RQWH');
+    </script>
+</head>
+<body>
+    <div class="background-image">
+        <img src="assets/background_image.png" alt="">
+        <div class="background-overlay"></div>
+    </div>
+
+    <div class="landing-page">
+        <div class="main-container">
+            <header class="top-section">
+                <!--dando icon-->
+                <svg width="54" height="48" viewBox="0 0 54 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.7 2.66666H5.4V0H48.6V2.66666H51.3V10.6667H48.6V2.66666H5.4V10.6667H2.7V2.66666Z" fill="white"/>
+                <path d="M0 18.6667H2.7V29.3334H0V34.6666H10.8458L10.8 29.3334H8.1V18.6667H10.8V13.3333H0V18.6667Z" fill="white"/>
+                <path d="M29.7 18.6667H32.4V13.3333H18.9V18.6667H24.3V29.3334H18.9V24H13.5V32H16.2V34.6666H27V32H29.7V18.6667Z" fill="white"/>
+                <path d="M5.4 45.3334H2.7V37.3334H5.4V45.3334H48.6V37.3334H51.3V45.3334H48.6V48H5.4V45.3334Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M48.6 13.3333V16H51.3V18.6667H54V29.3334H51.3V32H48.6V34.6666H35.1V13.3333H48.6ZM45.9 21.3334H48.6V26.6666H45.9V29.3334H40.5V18.6667H45.9V21.3334Z" fill="white"/>
+                </svg>
+
+                <div style="flex-grow: 1;"></div>
+                
+                <!--numero icon-->
+                <div class="numero-icon">
+                    <a href="https://numero.itsjustdando.com" target="_blank">
+                        <img src="assets/numero_logo.png" alt="">
+                    </a>
+                </div>
+
+                <!--mail icon-->
+                <div class="email-icon">
+                    <a href="mailto:hello@itsjustdando.com" target="_blank">
+                        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.00371424 3.91182C0.0508457 2.85881 0.511301 1.86424 1.28909 1.13546C2.06687 0.406679 3.10197 -7.3579e-05 4.17857 9.98346e-09H21.8214C22.898 -7.3579e-05 23.9331 0.406679 24.7109 1.13546C25.4887 1.86424 25.9492 2.85881 25.9963 3.91182L24.6257 4.65727L13 10.7855L1.37429 4.65727L0.00371424 3.91182ZM0 5.98909V15.9091C0 16.9941 0.440241 18.0346 1.22388 18.8018C2.00751 19.569 3.07035 20 4.17857 20H21.8214C22.9297 20 23.9925 19.569 24.7761 18.8018C25.5598 18.0346 26 16.9941 26 15.9091V5.98909L25.5116 6.25545L13.4401 12.6191C13.3049 12.6904 13.1536 12.7277 13 12.7277C12.8464 12.7277 12.6951 12.6904 12.5599 12.6191L0.477286 6.24909L0 5.98909Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+            
+            <main class="stuff-section">
+                <div class="info-section">
+                    <div class="info-title" style="color: white;">Hey there!</div>
+                    <div class="info-body">
+                        <p>
+                            <span style="color: white;">→</span>
+                            <span style="color: rgba(255, 255, 255, 0.5);">Self-taught 16 year old designer, passionate about video game design and programming.</span>
+                        </p>
+                        <p>&nbsp;</p>
+                        <p>
+                            <span style="color: white;">→</span>
+                            <span style="color: rgba(255, 255, 255, 0.5);">Currently finishing up school, but working on games in my free time.</span>
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="image-section">
+                    <div class="left-column">
+                        <img src="assets/cartridge_show_off.png" alt="">
+                        <img src="assets/numeroBanner_img.png" alt="">
+                        <img src="assets/calculator_app.png" alt="">
+                    </div>
+                    <div class="right-column">
+                        <img src="assets/gang_chat.png" alt="">
+                        <img src="assets/backToSchoolJunior_img.png" alt="">
+                        <img src="assets/ocPoopSummer.gif" alt="">
+                        <div style="height: 8px;"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="bottom-info">
+            <div class="info-body">
+                <p>
+                    <span style="color: rgba(255, 255, 255, 0.5);">Working on apps for </span>
+                    <a href="https://dafruits.com" target="_blank" style="cursor: pointer; color: white; font-weight: 600;">daFruits Studio ↗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
